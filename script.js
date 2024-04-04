@@ -17,7 +17,7 @@ function login() {
     .then(data => {
         if (data.token) {
             console.log('Login successful');
-            console.log('Token:', data.token , 'User:', data.user)
+            console.log('Data:', data, 'Data body:', data.body, 'Token:', data.token , 'User:', data.body.user.Id)
             localStorage.setItem('token', data.token);
         } else {
             console.error('Login failed');
