@@ -1,7 +1,8 @@
-const username = document.getElementById('username').value;
-const password = document.getElementById('password').value;
+
 
 function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
     fetch('https://localhost:7089/User/login', {
         method: 'POST',
         headers: {
