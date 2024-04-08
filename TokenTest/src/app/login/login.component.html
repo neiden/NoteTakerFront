@@ -1,0 +1,16 @@
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.component.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" method="post" (ngSubmit)="onSubmit()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required formControlName="username"><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required formControlName="password"><br><br>
+        
+        <button [disabled]="!loginForm.valid" type="submit" id="login-button">Login</button>
+    </form>
+</body>
