@@ -39,8 +39,11 @@ function register(){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: username,
-            password: password
+            id: 0,
+            login: username,
+            password: password,
+            passwordSalt: 'tempSalt',
+            personId: 0
         })
     })
     .then(response => response.json())
