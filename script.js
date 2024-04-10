@@ -31,8 +31,8 @@ function login() {
 
 
 function register(){
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const username = document.getElementById('username-register').value;
+    const password = document.getElementById('password-register').value;
     fetch('https://localhost:7089/User/register', {
         method: 'POST',
         headers: {
