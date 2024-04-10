@@ -1,9 +1,9 @@
-
+var apiRoot = "notetakerbackend.azurewebsites.net"
 
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    fetch('https://localhost:7089/User/login', {
+    fetch(apiRoot + '/User/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ function login() {
 function register(){
     const username = document.getElementById('username-register').value;
     const password = document.getElementById('password-register').value;
-    fetch('https://localhost:7089/User/register', {
+    fetch(apiRoot + '/User/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -48,13 +48,7 @@ function register(){
     })
     .then(response => response.json())
     .then(data => {
-        if (data.token) {
-            console.log('Registration successful');
-            console.log('Data:', data, 'User ID:', data.userId, 'Token:', data.token);
-            localStorage.setItem('token', data.token);
-        } else {
-            console.error('Registration failed');
-        }
+        console.log('Account Created', data);
     })
     .catch(error => {
         console.error('Network error', error);
