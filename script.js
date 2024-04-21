@@ -1,4 +1,4 @@
-var apiRoot = "notetakerbackend.azurewebsites.net"
+var apiRoot = "https://notetakerbackend.azurewebsites.net"
 
 function login() {
     const username = document.getElementById('username').value;
