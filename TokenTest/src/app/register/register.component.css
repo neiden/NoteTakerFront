@@ -162,22 +162,6 @@ form {
     width: 55%;
 }
 
-.no-top-padding{
-    padding-top: 0 !important;
-    margin: 0 !important;
-}
-
-#forgotPass{
-    color:#95bba1;
-    font-weight: 500;
-    font-size: 1em;
-    font-style:underline;
-    width: fit-content;
-    position: relative;
-    left: 58.5%;
-    margin-top: 2%;
-}
-
 #signup{
     display: flex;
     flex-direction: row;

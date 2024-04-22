@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login Page</title>
-        <link rel="stylesheet" href="login.component.css">
+        <title>Register</title>
+        <link rel="stylesheet" href="register.component.css">
     </head>
-    <body class="no-top-padding">
+    <body>
         <div id="loginWrapper">
             <div id="loginLeft">
                 <img src="assets\images\loginImg.png" alt="Product Image">
@@ -15,20 +16,22 @@
             <div id="loginRight">
                 <img src="assets\images\titleLogo.png" alt="Title Logo">
     
-                <form [formGroup]="loginForm" method="post" (ngSubmit)="onSubmit()">
-                    <label for="username">Username or email</label>
-                    <input type="text" id="username" name="username" required formControlName="username"><br><br>
+                <form [formGroup]="registerForm" method="post" (ngSubmit)="onSubmit()">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required formControlName="username">
                     
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required formControlName="password">
-                    <a href="/" id="forgotPass">Forgot password?</a>
                     
-                    <button [disabled]="!loginForm.valid" type="submit" id="login-button">Sign in</button>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required formControlName="email">
+                    
+                    <button [disabled]="!registerForm.valid" type="submit" id="login-button">Sign Up</button>
                 </form>
                 
                 <div id="signup">
-                    <p>Are you new?</p>
-                    <a routerLink="/register" routerLinkActive="active">Create an Account</a>
+                    <p>Return to login</p>
+                    <a routerLink="/login" routerLinkActive="active">here</a>
                 </div>
             </div>
         </div>
