@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { DatabaseApiService } from '../database-api.service';
+import { DatabaseApiService } from '../services/database-api.service';
 import {FormGroup, FormControl} from '@angular/forms';
+import { LoadingindicatorComponent } from '../loadingindicator/loadingindicator.component';
+import { LoadingindicatorService } from '../services/loadingindicator.service';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +15,23 @@ export class LoginComponent {
     password: new FormControl('')
   })
 
-  constructor(private api: DatabaseApiService) { }
+  constructor(private api: DatabaseApiService, private loadingService: LoadingindicatorService) { }
 
 
   onSubmit(){
-    this.api.login(this.loginForm.controls.username.value!, this.loginForm.controls.password.value!).subscribe((data: any) => {
-      console.log(data);
-    });
+    try{
+      this.loadingService.loadingOn();
+
+      this.api.login(this.loginForm.controls.username.value!, this.loginForm.controls.password.value!).subscribe((data: any) => {
+        console.log(data);
+      });
+    }
+    catch(error){
+      console.log(error);
+    }
+    finally{
+      this.loadingService.loadingOff();
+    }
   }
 
 

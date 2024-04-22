@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingindicatorComponent } from './loadingindicator/loadingindicator.component';
 
 @Component({
   selector: 'app-root',

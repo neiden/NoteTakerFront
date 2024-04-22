@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { DatabaseApiService } from '../database-api.service';
+import { DatabaseApiService } from '../services/database-api.service';
 
 @Component({
   selector: 'app-register',
