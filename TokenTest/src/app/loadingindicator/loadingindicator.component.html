@@ -1,5 +1,5 @@
 <div *ngIf="loading$ | async" class="spinner-container">
-    <ng-container ngIf="customLoadingIndicator; else defaultLoadingIndicator">
+    <ng-container *ngIf="customLoadingIndicator; else defaultLoadingIndicator">
         <ng-container *ngTemplateOutlet="customLoadingIndicator"></ng-container>
     </ng-container>
     <ng-template #defaultLoadingIndicator>
