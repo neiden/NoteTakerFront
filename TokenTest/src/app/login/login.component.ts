@@ -11,10 +11,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
   loginForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl('')
   })  
+
+  loginFailed: boolean = false;
 
 
 
@@ -27,9 +30,11 @@ export class LoginComponent {
         {next: (d) => {
           this.router.navigate(['/home']);
           this.loadingService.loadingOff();
+          this.loginFailed = false;
         },
           error: (e) => {
             console.log(e),
+            this.loginFailed = true;
             this.loadingService.loadingOff();
           }
         })

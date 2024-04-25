@@ -104,6 +104,17 @@ div {
 
 }
 
+#loginFailed {
+    color: rgb(246, 139, 139);
+    font-weight: 500;
+    font-size: 1em;
+    position: relative;
+    bottom: 10%;
+    margin-left: 20%;
+    margin-top: 3%;
+
+}
+
 #loginRight{
     flex: .45;
     display: flex;

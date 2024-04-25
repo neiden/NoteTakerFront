@@ -10,6 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { LoadingindicatorComponent } from './loadingindicator/loadingindicator.component';
 import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,8 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    LoadingindicatorComponent
+    LoadingindicatorComponent,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
