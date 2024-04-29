@@ -1,0 +1,26 @@
+<ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="name-col">Name</th>
+                <th class="age-col">Age</th>
+                <th class="id-col">ID</th>
+                <th class="due-date-col">Due Date</th>  
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students" (click) = "showStudent(student)">
+                    <td class="name-col"><img src="" alt="">{{student.fName}} {{student.lName}}</td>
+                    <td class="age-col">{{student.age}}</td>
+                    <td class="id-col">{{student.id}}</td>
+                    <td class="due-date-col">{{student.dueDate}}</td>
+            </tr>
+          </tbody>
+
+    </table>
+    <!-- <app-student-row *ngFor="let student of students;" [student] = "student">  </app-student-row> -->
+    <!-- <li *ngFor="let student of students">
+        {{student.name}} - {{student.age}} - {{student.id}}
+    </li> -->
+</ul>

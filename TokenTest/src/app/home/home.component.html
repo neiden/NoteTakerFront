@@ -3,10 +3,36 @@
         <app-navbar></app-navbar>
     </div>
     <div id="middle">
-        <p>Middle</p>
+        <div id="searchBar"> 
+            <mat-icon>search</mat-icon>
+            <input type="search" matInput placeholder="Search for student">
+        </div>
+        <div id="header">
+            <h1>Students</h1>
+            <form ></form>
+            <mat-form-field >
+                <mat-label >Filter</mat-label>
+                <mat-select [(value)]="filterProperty">
+                  <mat-option>None</mat-option>
+                  <mat-option value="age">Age</mat-option>
+                  <mat-option value="school">School</mat-option>
+                  <mat-option value="dueDate">Due Date</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+        <div id="studentList">
+            <app-student-list></app-student-list>
+        </div>
     </div>
 
     <div id="right">
+        <div id="profileInfo">
+            <mat-icon>notifications_none</mat-icon>
+            <img src="assets/images/profilePic.png" alt="profilePic">
+            <p>John Swanberg</p>
+            <mat-icon>arrow_drop_down</mat-icon>
+        </div>
+        <mat-calendar [(selected)]="selectedDate"></mat-calendar>
         <p>right</p>
     </div>
 </div>

@@ -1,0 +1,29 @@
+
+
+
+li {
+    list-style-type: none;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    background-color:aliceblue;
+    cursor:pointer;
+    outline: none;
+    border: none;
+    text-align: left;   
+    padding: .2rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}
+
+button:hover {
+    background-color: #4fbf82;
+    color: white;
+    padding: .2rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}

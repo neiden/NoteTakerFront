@@ -1,0 +1,103 @@
+#tableHeader{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed; /* This makes the table respect the set widths */
+    justify-content: left;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  
+  .name-col {
+    padding-left: 1rem;
+    width: 3rem; /* Adjust as needed */
+  }
+  
+  .age-col {
+    padding-left: 1rem;
+    width: 1rem; /* Adjust as needed */
+  }
+  
+
+  .id-col {
+    padding-left: 1rem;
+    width: 20%; /* Adjust as needed */
+  }
+  
+  .due-date-col {
+    padding-left: 1rem;
+    width: 20%; /* Adjust as needed */
+  }
+
+  td {
+    margin-left: 1rem;
+  }
+
+tbody {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+tbody tr:nth-child(odd){
+    background-color:white;
+    cursor:pointer;
+    outline: none;
+    text-align: left;   
+    padding: 1rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}
+
+tbody tr:nth-child(even){
+    background-color:#f1f9f6;
+    cursor:pointer;
+    outline: none;
+    text-align: left;   
+    padding: 1rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}
+
+td {
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}
+
+tbody tr:hover {
+    background-color: #84cca4;
+    color: white;
+    padding: .2rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}
+
+thead th {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+  
+button {
+    width: max-content;
+    background-color:aliceblue;
+    cursor:pointer;
+    outline: none;
+    border: none;
+    text-align: left;   
+    padding: .2rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    box-sizing: border-box;
+}
+
+button:hover {
+    width: max-content;
+    background-color: #c8fbdf;
+    color: white;
+    padding: .2rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}

@@ -15,15 +15,19 @@
     flex: .1;
     display:flex;
     flex-direction:column;
-    background-color: aliceblue;
-    
+    /* background-color: #e6feed; */
+    background-color: #fdfdff;
+    border-right: 1px solid #d7d1d1;
 }
 
 #middle{
+    padding-left: 1.5rem;
+    padding-right: 1rem;
     display: flex;
     flex-direction: column;
     flex: .65;
-    background-color: blanchedalmond;
+    background-color: white;
+
 }
 
 #right{
@@ -31,4 +35,88 @@
     flex-direction: column;
     flex: .25;
     background-color: darkkhaki;
+}
+
+#searchBar input{
+    border: none;
+    color: #aab2bd;
+    background-color: #f4f4f4;
+    font-weight: 525;
+}
+#searchBar input:focus{
+    border: none;
+    outline: none   ;
+}
+#searchBar mat-icon{
+    position:relative;
+    margin-right: 10px;
+}
+#searchBar{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #f4f4f4;
+    color: #aab2bd;
+    width:25%;
+    border-radius: 10px;
+    padding: .5em;
+    margin-top: 15px;
+    margin-bottom: 2rem;
+}
+
+#header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #d7d1d1;
+}
+
+#header h1 {
+    flex: .2
+}
+
+#header mat-icon {
+    flex: .8;
+    padding: 1em;
+}
+
+#studentList {
+    padding-top: 2rem;
+}
+
+#profileInfo {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #d7d1d1;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled)  {
+    background-color: #f4f4f4;
+    height: 1rem;
+    width: 6rem;
+    font-size: .5rem;
+    padding-top:.15rem;
+}
+::ng-deep .mdc-menu-surface.mat-mdc-select-panel {
+    background-color: #f4f4f4;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+    color: #aab2bd;
+
+}
+
+::ng-deep .mdc-text-field {
+    align-items: center!important;
+    width: 50%;
+}
+
+::ng-deep .mat-mdc-select-arrow svg {
+    color: #aab2bd;
+}
+
+mat-label {
+    color:#aab2bd;
+    font-weight: 450;
+    font-size: .75rem;
 }
