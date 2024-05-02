@@ -26,7 +26,7 @@ export class DatabaseApiService {
   getStudents(token?: string) {
     //return [new Student(1, 'John', 'Doe', 21, '2021-12-31', 'University of Washington'), new Student(2, 'Jane', 'Doe', 22, '2021-12-31', 'University of Washington'), new Student(3, 'John', 'Smith', 23, '2021-12-31', 'University of Washington'), new Student(4, 'Jane', 'Smith', 24, '2021-12-31', 'University of Washington')];
     const headers = { 'Authorization': 'Bearer ' + token };
-    return this.http.get(this.apiRoot + '/Student/getStudentsByTeacherId');
+    return this.http.get(this.apiRoot + '/Student/getStudentsByTeacherId', {headers});
   }
 
 }
