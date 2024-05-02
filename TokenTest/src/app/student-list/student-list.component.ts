@@ -16,10 +16,16 @@ import { SharedStudentService } from '../services/shared-student.service';
 export class StudentListComponent {
 
   constructor(readonly api: DatabaseApiService, readonly router: ActivatedRoute, private sharedStudentService: SharedStudentService, private route: Router){}
-  students: Student[] = [];
+  students: any;
+  loading = true;
 
   ngOnInit(){
-    this.students = this.api.getStudents();
+    const token = localStorage.getItem('token')
+    console.log("JWT token:" + token)
+    this.api.getStudents(token!).subscribe((students) => {
+      this.students = students;
+      this.loading = false;
+    });
   }
 
   showStudent(student: Student){

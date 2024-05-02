@@ -5,15 +5,17 @@
             <tr>
                 <th class="name-col">Name</th>
                 <th class="age-col">Age</th>
-                <th class="id-col">ID</th>
+                <th class="school-col">School</th>
                 <th class="due-date-col">Due Date</th>  
             </tr>
         </thead>
-        <tbody>
+        <div *ngIf="loading"><p>Loading Students</p></div>
+
+        <tbody *ngIf="!loading">
             <tr *ngFor="let student of students" (click) = "showStudent(student)">
                     <td class="name-col"><img src="" alt="">{{student.fName}} {{student.lName}}</td>
                     <td class="age-col">{{student.age}}</td>
-                    <td class="id-col">{{student.id}}</td>
+                    <td class="school-col">{{student.school}}</td>
                     <td class="due-date-col">{{student.dueDate}}</td>
             </tr>
           </tbody>

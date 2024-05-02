@@ -27,7 +27,9 @@ export class LoginComponent {
   onSubmit(){
       this.loadingService.loadingOn();
       this.api.login(this.loginForm.controls.username.value!, this.loginForm.controls.password.value!).subscribe(
-        {next: (d) => {
+        {next: (d: any) => {
+          localStorage.setItem('token', d.token);
+          
           this.router.navigate(['/home']);
           this.loadingService.loadingOff();
           this.loginFailed = false;
