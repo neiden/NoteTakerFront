@@ -19,8 +19,9 @@ export class DatabaseApiService {
     return this.http.post(this.apiRoot + '/User/register', { id: 0, login: username, password, passwordSalt: "", personId: 0 });
   }
 
-  createStudent(student: Student) {
-    return this.http.post(this.apiRoot + '/Student/create', student);
+  createStudent(student: Student, token: string) {
+    const headers = { 'Authorization': 'Bearer ' + token };
+    return this.http.post(this.apiRoot + '/Student/create', student, {headers});
   }
   //TODO: Get all students based on current JWT token; return Observable<Student[]>
   getStudents(token?: string) {

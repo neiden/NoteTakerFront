@@ -13,10 +13,10 @@
 
         <tbody *ngIf="!loading">
             <tr *ngFor="let student of students" (click) = "showStudent(student)">
-                    <td class="name-col"><img src="" alt="">{{student.fName}} {{student.lName}}</td>
+                    <td class="name-col"><img src="" alt="">{{student.fname}} {{student.lName}}</td>
                     <td class="age-col">{{student.age}}</td>
                     <td class="school-col">{{student.school}}</td>
-                    <td class="due-date-col">{{student.dueDate}}</td>
+                    <td class="due-date-col">{{student.dueDate | date:'MM/dd'}}</td>
             </tr>
           </tbody>
 

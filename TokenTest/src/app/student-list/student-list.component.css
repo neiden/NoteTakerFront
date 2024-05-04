@@ -43,23 +43,25 @@ tbody {
 }
 
 tbody tr:nth-child(odd){
-    background-color:white;
-    cursor:pointer;
-    outline: none;
-    text-align: left;   
-    padding: 1rem;
-    padding-top: .7rem;
-    padding-bottom: .7rem;
+  height: 3rem;
+  background-color:white;
+  cursor:pointer;
+  outline: none;
+  text-align: left;   
+  padding: 1rem;
+  padding-top: .7rem;
+  padding-bottom: .7rem;
 }
 
 tbody tr:nth-child(even){
-    background-color:#f1f9f6;
-    cursor:pointer;
-    outline: none;
-    text-align: left;   
-    padding: 1rem;
-    padding-top: .7rem;
-    padding-bottom: .7rem;
+  height: 3rem;
+  background-color:#f1f9f6;
+  cursor:pointer;
+  outline: none;
+  text-align: left;   
+  padding: 1rem;
+  padding-top: .7rem;
+  padding-bottom: .7rem;
 }
 
 td {

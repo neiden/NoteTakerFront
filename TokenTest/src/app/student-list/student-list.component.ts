@@ -21,10 +21,17 @@ export class StudentListComponent {
 
   ngOnInit(){
     const token = localStorage.getItem('token')
-    console.log("JWT token:" + token)
     this.api.getStudents(token!).subscribe((students) => {
       this.students = students;
       this.loading = false;
+    });
+
+    this.sharedStudentService.getRefreshStudentList().subscribe(() => {
+      this.loading = true;
+      this.api.getStudents(token!).subscribe((students) => {
+        this.students = students;
+        this.loading = false;
+      });
     });
   }
 

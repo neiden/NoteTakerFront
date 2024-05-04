@@ -168,3 +168,17 @@ mat-label {
 ::ng-deep .mat-calendar-body-selected{
     background-color: #84cca4!important;
 }
+
+#createStudentButton {
+    border-radius: 10px;
+    margin-top: 1rem;
+    border:none;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 530;
+}
+
+#createStudentButton:hover{
+    cursor:pointer;
+    background-color: #84cca4;
+}

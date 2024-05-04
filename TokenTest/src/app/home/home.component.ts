@@ -8,16 +8,24 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { FormControl } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { MatDialogModule, MatDialog} from '@angular/material/dialog';
+import { NewStudentDialogComponent } from '../new-student-dialog/new-student-dialog.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  imports: [MatSelectModule, MatFormFieldModule, MatIconModule, NavbarComponent, StudentListComponent, MatDatepickerModule, MatNativeDateModule, RouterLink],
+  imports: [MatSelectModule, MatFormFieldModule, MatIconModule, NavbarComponent, StudentListComponent, MatDatepickerModule, MatNativeDateModule, RouterLink, MatDialogModule],
   standalone: true
 })
 export class HomeComponent {
   filterProperty: string = '';
   hideRequiredControl = new FormControl(false);
   selectedDate: Date = new Date();
+  constructor(private dialogRef: MatDialog){}
+
+
+  openDialog(){
+    this.dialogRef.open(NewStudentDialogComponent);
+  }
 }
