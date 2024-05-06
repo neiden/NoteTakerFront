@@ -1,20 +1,13 @@
 <div id="wrapper">
-    <img src="assets/images/titleLogo2.png" alt="titleLogo">
-    <div id="dashContainer">
-        <div class="iconContainer" id="dashboard">
-            <p><mat-icon>dashboard</mat-icon>Dashboard</p>
-        </div>
-        <div class="iconContainer" id="calendar">
-            <p><mat-icon>calendar_month</mat-icon>Calendar</p>
-        </div>
-        <div class="iconContainer" id="Notes">
-            <p><mat-icon>description</mat-icon>Notes</p> 
-        </div>
-        <div class="iconContainer" id="settings">
-            <p><mat-icon>settings</mat-icon>Settings</p>
-        </div>
+    <div id="navbar">
+        <app-navbar></app-navbar>
+    </div>
+    <div id="contentWrapper">
+        <p>{{student.fname}} {{student.lName}} {{student.age}} {{student.school}} {{student.id}}</p>
+    </div>
+    <div id="right">
+
     </div>
 </div>
 
 
-<p>{{student.fName}} {{student.lName}} {{student.age}} {{student.school}} {{student.id}}</p>

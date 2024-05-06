@@ -6,14 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentViewComponent } from './student-view/student-view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {PermissionsService} from './services/permissions.service';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: LoginComponent,canActivate: [PermissionsService]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'students', component: StudentListComponent},
-  {path: 'student-view', component: StudentViewComponent},
+  {path: 'home', component: HomeComponent, canActivate: [PermissionsService]},
+  {path: 'students', component: StudentListComponent, canActivate: [PermissionsService]},
+  {path: 'student-view', component: StudentViewComponent,   canActivate: [PermissionsService]},
   {path: '**', component: PageNotFoundComponent},
 ];
 

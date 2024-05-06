@@ -27,6 +27,15 @@
     color: black!important;
 }
 
+:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled){
+    background-color: #f1f9f6;
+    height: 1rem;
+    width: 6rem;
+    font-size: .5rem;
+}
+
+
+
 button {
     padding:.75rem;
     font-size: 1rem;

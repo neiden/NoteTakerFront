@@ -16,10 +16,9 @@
                     <td class="name-col"><img src="" alt="">{{student.fname}} {{student.lName}}</td>
                     <td class="age-col">{{student.age}}</td>
                     <td class="school-col">{{student.school}}</td>
-                    <td class="due-date-col">{{student.dueDate | date:'MM/dd'}}</td>
+                    <td class="due-date-col" [class]="getDueDateColor(student.dueDate)">{{student.dueDate | date:'MM/dd'}}</td>
             </tr>
           </tbody>
-
     </table>
     <!-- <app-student-row *ngFor="let student of students;" [student] = "student">  </app-student-row> -->
     <!-- <li *ngFor="let student of students">

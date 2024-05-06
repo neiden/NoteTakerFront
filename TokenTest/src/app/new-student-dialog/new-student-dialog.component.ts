@@ -39,10 +39,10 @@ export class NewStudentDialogComponent {
     var token = localStorage.getItem('token')!;
     this.loadingService.loadingOn();
     var student = {} as Student;
-    student.fName = this.fname;
+    student.fname = this.fname;
     student.lName = this.lname;
     student.age = this.age;
-    student.dueDate = this.dueDate.toISOString();
+    student.dueDate = this.dueDate;
     student.school = this.school;
 
     this.api.createStudent(student, token).subscribe(

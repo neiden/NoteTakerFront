@@ -20,14 +20,13 @@ export class DatabaseApiService {
   }
 
   createStudent(student: Student, token: string) {
-    const headers = { 'Authorization': 'Bearer ' + token };
-    return this.http.post(this.apiRoot + '/Student/create', student, {headers});
+    return this.http.post(this.apiRoot + '/Student/create', student);
   }
   //TODO: Get all students based on current JWT token; return Observable<Student[]>
   getStudents(token?: string) {
     //return [new Student(1, 'John', 'Doe', 21, '2021-12-31', 'University of Washington'), new Student(2, 'Jane', 'Doe', 22, '2021-12-31', 'University of Washington'), new Student(3, 'John', 'Smith', 23, '2021-12-31', 'University of Washington'), new Student(4, 'Jane', 'Smith', 24, '2021-12-31', 'University of Washington')];
-    const headers = { 'Authorization': 'Bearer ' + token };
-    return this.http.get(this.apiRoot + '/Student/getStudentsByTeacherId', {headers});
+
+    return this.http.get(this.apiRoot + '/Student/getStudentsByTeacherId');
   }
 
 }

@@ -103,3 +103,17 @@ button:hover {
     padding-top: .7rem;
     padding-bottom: .7rem;
 }
+
+
+.red{
+  background-color: rgb(206, 137, 137);
+}
+
+.green{
+  background-color: rgb(170, 207, 170);
+}
+
+.yellow{
+  background-color: rgb(220, 220, 178);
+}
+

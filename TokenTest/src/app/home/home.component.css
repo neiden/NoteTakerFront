@@ -182,3 +182,35 @@ mat-label {
     cursor:pointer;
     background-color: #84cca4;
 }
+
+#dropDown{
+    cursor:pointer; 
+    color: #a7afbb;
+}
+
+mat-icon{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #a7afbb!important;
+}
+
+mat-menu-item:hover{
+    background-color: #84cca4!important;
+    color: white!important;
+}
+
+#dropdownIcon {
+    border:none;
+    outline: none;
+    background-color: transparent;
+}
+.dropdownItem:hover{
+    background-color: #c6e8d5!important;
+    color: white!important;
+}
+
+::ng-deep .mat-mdc-menu-content {
+    background-color: #f4f4f4;  
+    padding: .5rem;
+}

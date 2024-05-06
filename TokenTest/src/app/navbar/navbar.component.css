@@ -58,3 +58,8 @@ mat-icon {
 .iconContainer:hover{
     border-left: 4px solid #4fbf82;
 }
+
+.active-link{
+    color:#4fbf82;
+    font-weight: 500;
+}
