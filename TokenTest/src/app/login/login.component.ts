@@ -29,7 +29,7 @@ export class LoginComponent {
       this.api.login(this.loginForm.controls.username.value!, this.loginForm.controls.password.value!).subscribe(
         {next: (d: any) => {
           localStorage.setItem('token', d.token);
-          
+          localStorage.setItem('username', this.loginForm.controls.username.value!);
           this.router.navigate(['/home']);
           this.loadingService.loadingOff();
           this.loginFailed = false;
@@ -40,16 +40,6 @@ export class LoginComponent {
             this.loadingService.loadingOff();
           }
         })
-      // this.api.login(this.loginForm.controls.username.value!, this.loginForm.controls.password.value!).subscribe((data: any) => {
-      //   if(data.token){
-      //     this.router.navigate(['/home']);  
-      //   }
-      //   this.loadingService.loadingOff(); 
-      // },
-      // (error: any) => {
-      //   console.log(error);
-      //   this.loadingService.loadingOff();
-      // });
     }
 
 

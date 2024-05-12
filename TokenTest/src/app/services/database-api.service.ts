@@ -16,7 +16,7 @@ export class DatabaseApiService {
   }
   //TODO: Add email to the register function
   register(username?: string, password?: string, email?: string) {
-    return this.http.post(this.apiRoot + '/User/register', { id: 0, login: username, password, passwordSalt: "", personId: 0 });
+    return this.http.post(this.apiRoot + '/User/register', { id: 0, login: username, password, passwordSalt: "", personId: 0, email });
   }
 
   createStudent(student: Student, token: string) {

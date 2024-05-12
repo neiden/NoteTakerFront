@@ -14,7 +14,7 @@
                 <mat-label >Filter</mat-label>
                 <mat-select [(value)]="filterProperty" (selectionChange) = "filterChanged()">
                   <mat-option>None</mat-option>
-                  <mat-option value="age">Age</mat-option>
+                  <mat-option id="filterOption" value="age">Age</mat-option>
                   <mat-option value="school">School</mat-option>
                   <mat-option value="dueDate">Due Date</mat-option>
                 </mat-select>
@@ -29,7 +29,7 @@
         <div id="profileInfo">
             <mat-icon>notifications_none</mat-icon>
             <img src="assets/images/calcifer.png" alt="">
-            <p>John Swanberg</p>
+            <p>{{username}}</p>
             <button id="dropdownIcon" mat-icon-button [matMenuTriggerFor] = "menu">
                 <mat-icon id="dropDown">arrow_drop_down</mat-icon>
             </button>

@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
@@ -19,12 +19,16 @@ import {MatMenuModule} from '@angular/material/menu';
   imports: [MatMenuModule, MatSelectModule, MatFormFieldModule, MatIconModule, NavbarComponent, StudentListComponent, MatDatepickerModule, MatNativeDateModule, RouterLink, MatDialogModule],
   standalone: true
 })  
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   filterProperty: string = '';
   hideRequiredControl = new FormControl(false);
   selectedDate: Date = new Date();
+  username: string = 'User';
   constructor(private dialogRef: MatDialog, private router: Router){}
 
+  ngOnInit(){
+    this.username = localStorage.getItem('username')!;
+  }
 
   openDialog(){
     this.dialogRef.open(NewStudentDialogComponent);
@@ -32,6 +36,7 @@ export class HomeComponent {
 
   logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
     this.router.navigate(['/login']);
   }
 

@@ -10,7 +10,6 @@
     justify-content: center;
     flex-direction: row;
     height: 100vh;
-
 }
 
 #navBar{
@@ -29,7 +28,6 @@
     flex-direction: column;
     flex: .65;
     background-color: white;
-
 }
 
 #right{
@@ -46,14 +44,17 @@
     background-color: #f4f4f4;
     font-weight: 525;
 }
+
 #searchBar input:focus{
     border: none;
     outline: none   ;
 }
+
 #searchBar mat-icon{
     position:relative;
     margin-right: 10px;
 }
+
 #searchBar{
     display:flex;
     flex-direction: row;
@@ -112,10 +113,11 @@
 }
 ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled)  {
     background-color: #f4f4f4;
-    height: 1rem;
+    height: 3rem;
     width: 6rem;
     font-size: .5rem;
     padding-top:.15rem;
+    border-radius: 10px;
 }
 ::ng-deep .mdc-menu-surface.mat-mdc-select-panel {
     background-color: #f4f4f4;
@@ -161,12 +163,22 @@ mat-label {
     color: black!important;
 }
 
+
+::ng-deep .mat-mdc-select-value-text{
+    color: black!important;
+
+}
+
 ::ng-deep .mat-mdc-button:not(:disabled){
     color: black!important;
 }
 
 ::ng-deep .mat-calendar-body-selected{
     background-color: #84cca4!important;
+}
+
+#filterOption{
+    color: black;
 }
 
 #createStudentButton {

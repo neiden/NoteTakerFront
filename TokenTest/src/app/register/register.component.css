@@ -163,6 +163,14 @@ form {
     margin-left: 20%;
     width: 55%;
 }
+#registerFailed{
+    color: rgb(246, 139, 139);
+    font-weight: 500;
+    font-size: 1em;
+    bottom: 10%;
+    margin-left: 20%;
+    margin-top: 1rem;
+}
 
 #signup{
     display: flex;
