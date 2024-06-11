@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Student } from '../models/student.model';
+import { Note } from '../models/note.model';
+import { Goal } from '../models/goal.model';
+import { Data } from '../models/data.model';
+import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,4 +33,41 @@ export class DatabaseApiService {
     return this.http.get(this.apiRoot + '/Student/getStudentsByTeacherId');
   }
 
+  createNote(note: Note){
+    return this.http.post(this.apiRoot + '/Note/create', note);
+  }
+
+  getNotes(studentId: number){
+    return this.http.get(this.apiRoot + '/Note/get/student/' + studentId);
+  }
+
+  getGoals(studentId: number): Observable<Goal[]>{
+    //return this.http.get(this.apiRoot + '/Goal/get/student/' + studentId);
+    
+    return of([
+      new Goal(1, 'Attendance', 1, 1), 
+      new Goal(2, 'Homework', 2, 1), 
+      new Goal(3, 'Participation', 3, 1), 
+      new Goal(4, 'Test Scores', 4, 1)
+    ]);
+  }
+
+  createGoal(goal: Goal){
+    //return this.http.post(this.apiRoot + '/Goal/create', goal);
+    return of(goal);
+  }
+
+  createData(data: Data){
+    return of(data);
+  }
+
+  getData(studentId: number, goalId: number){
+    //return this.http.get(this.apiRoot + '/Data/get/student/' + studentId + '/goal/' + goalCategory);
+    return of([
+      new Data(1, 10, 10, 10, 10, new Date(), 'This is a note', 1, 1),
+      new Data(2, 20, 20, 20, 20, new Date(), 'This is a note', 1, 1),
+      new Data(3, 30, 30, 30, 30, new Date(), 'This is a note',1 , 1),
+      new Data(4, 40, 40, 40, 40, new Date(), 'This is a note',1, 1)
+    ])
+  }
 }

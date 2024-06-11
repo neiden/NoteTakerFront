@@ -69,3 +69,105 @@ mat-icon {
 .iconContainer:hover{
     border-left: 3px solid #4fbf82;
 }
+
+#noteInput {
+    height: 20%;
+    width: 60%;
+    border:none;
+    padding: 1rem 1rem 0 1rem;
+    text-align: left;
+    background-color: #f4f4f4;
+}
+
+#noteInput:focus{
+    outline: 1px solid #cccbcb;
+    padding: 1rem;
+}
+
+#noteInput::placeholder{
+    color: #aab2bd;
+    font-weight: 525;
+}
+
+#createButton{
+    background-color: #4fbf82;
+    color: white;
+    border: none;
+    width: 30%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+table{
+    margin-top: 1rem;
+}
+
+
+
+.loading-indicator {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 2rem;
+    height: 2rem;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+
+
+  tbody tr:nth-child(odd){
+    height: 3rem;
+    background-color:white;
+    cursor:pointer;
+    outline: none;
+    text-align: left;   
+    padding: 1rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+  }
+  
+  tbody tr:nth-child(even){
+    height: 3rem;
+    background-color:#f1f9f6;
+    cursor:pointer;
+    outline: none;
+    text-align: left;   
+    padding: 1rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+  }
+  
+  td {
+      padding-top: .7rem;
+      padding-bottom: .7rem;
+  }
+  
+  tbody tr:hover {
+      background-color: #84cca4;
+      color: white;
+      padding: .2rem;
+      padding-top: .7rem;
+      padding-bottom: .7rem;
+  }
+  
+  thead th {
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+  }

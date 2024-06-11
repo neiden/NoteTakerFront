@@ -18,6 +18,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { NewStudentDialogComponent } from './new-student-dialog/new-student-dialog.component';
 import { AuthInterceptor } from './auth-interceptor';
+import { CreateGoalDialogComponent } from './create-goal-dialog/create-goal-dialog.component';
+import { CreateDataDialogComponent } from './create-data-dialog/create-data-dialog.component';
+import { GoalViewComponent } from './goal-view/goal-view.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -40,6 +44,7 @@ import { AuthInterceptor } from './auth-interceptor';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
+    MatNativeDateModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

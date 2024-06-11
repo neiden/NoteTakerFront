@@ -1,0 +1,70 @@
+#graph{
+    margin: 0 auto;
+    display: block;
+    padding: 0;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+  
+  .date-col,
+  .ind-col,
+  .prompted-col,
+  .sc-col,
+  .teach-col,
+  .notes-col {
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .date-col {
+    width: 20%;
+  }
+  
+  .ind-col {
+    width: 15%;
+  }
+  
+  .prompted-col {
+    width: 15%;
+  }
+  
+  .sc-col {
+    width: 15%;
+  }
+  
+  .teach-col {
+    width: 15%;
+  }
+  
+  .notes-col {
+    width: 20%;
+  }
+
+
+#addDataBtn{
+    margin-left: 2rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    border:none;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 530;
+}
+
+#addDataBtn:hover{
+    cursor:pointer;
+    background-color: #84cca4;
+    
+}

@@ -21,6 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
 })  
 export class HomeComponent implements OnInit {
   filterProperty: string = '';
+  sortProperty: string = '';
   hideRequiredControl = new FormControl(false);
   selectedDate: Date = new Date();
   username: string = 'User';

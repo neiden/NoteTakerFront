@@ -16,31 +16,48 @@ import { SharedStudentService } from '../services/shared-student.service';
 export class StudentListComponent implements OnChanges{
 
   @Input() filterProperty: string = '';
+  @Input() sortProperty: string = '';
 
   constructor(readonly api: DatabaseApiService, readonly router: ActivatedRoute, private sharedStudentService: SharedStudentService, private route: Router){}
   students: Student[] = [];
+  filteredStudents: Student[] = [];
   loading = true;
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("Student list receiving changed filter: " + changes['filterProperty'].currentValue);
-    this.changeFilter(changes['filterProperty'].currentValue);
+    //console.log("Student list receiving changed filter: " + changes['filterProperty'].currentValue);
+    if (changes['filterProperty']){
+      this.changeFilter(changes['filterProperty'].currentValue);
+    }
+    if (changes['sortProperty']){
+      this.changeSort(changes['sortProperty'].currentValue);
+    }
+  }
+
+  changeSort(newSort: string){
+    console.log("Calling changeSort with: " + newSort);
+    switch(newSort){
+      case 'age':
+        this.students.sort((a,b) =>  a.age - b.age);
+        break;
+      case 'school':
+        this.students.sort((a,b) => a.school.localeCompare(b.school));
+        break;
+      case 'dueDate':
+        this.students.sort((a,b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime());
+        break;
+      default:
+        break;
+    }
   }
 
   changeFilter(newFilter: string){
-      switch(newFilter){
-        case 'age':
-          this.students.sort((a,b) =>  a.age - b.age);
-          break;
-        case 'school':
-          this.students.sort((a,b) => a.school.localeCompare(b.school));
-          break;
-        case 'dueDate':
-          this.students.sort((a,b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime());
-          break;
-        default:
-          break;
-      }
+    console.log("Calling changeFilter with: " + newFilter);
+    if (newFilter) {
+      this.filteredStudents = this.students.filter(student => student.school.toLowerCase().includes(newFilter.toLowerCase()));
+    } else {
+      this.filteredStudents = this.students;
     }
+  }
 
   ngOnInit(){
     const token = localStorage.getItem('token')
@@ -62,7 +79,6 @@ export class StudentListComponent implements OnChanges{
     var dueDate = new Date(dueDate);
     const now = new Date();
     const difference = (dueDate.getTime() - now.getTime()) / 86400000; // Get the difference in days
-    console.log("Due date: " + dueDate +" now: " + now + " difference: " + difference);
     if(difference < 14){
       return 'red';
     }

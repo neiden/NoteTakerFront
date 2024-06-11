@@ -1,15 +1,15 @@
 export class Student {
     id: number;
-    fname: string;
+    fName: string;
     lName: string;
     age: number;
     dueDate: Date;
     school: string;
     email: string;
 
-    constructor(id: number, fname: string, lName: string, age: number, dueDate: Date, school: string, email: string) {
+    constructor(id: number, fName: string, lName: string, age: number, dueDate: Date, school: string, email: string) {
         this.id = id;
-        this.fname = fname;
+        this.fName = fName;
         this.lName = lName;
         this.age = age;
         this.dueDate = dueDate;

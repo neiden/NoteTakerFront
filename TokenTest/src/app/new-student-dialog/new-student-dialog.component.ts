@@ -34,24 +34,22 @@ export class NewStudentDialogComponent {
     this.dialogRef.close();
   }
 
-
   onCreate(): void {
     var token = localStorage.getItem('token')!;
     this.loadingService.loadingOn();
     var student = {} as Student;
-    student.fname = this.fname;
+    student.fName = this.fname;
     student.lName = this.lname;
     student.age = this.age;
     student.dueDate = this.dueDate;
     student.school = this.school;
-
+    
     this.api.createStudent(student, token).subscribe(
       {next: (data:any) => {
         this.loadingService.loadingOff();
         this.dialogRef.close();
-
         this.studentService.refreshStudentList();
-      },
+      },   
       error: (e) => {
         console.log("Error creating student: " + e);
         this.createFailed = true;

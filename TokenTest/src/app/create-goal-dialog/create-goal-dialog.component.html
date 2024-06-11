@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Create New Goal</h1>
+<div mat-dialog-content class="field-wrapper">
+  <mat-form-field >
+    <input class="input" placeholder="Category" [(ngModel)]="goalCategory" required>
+  </mat-form-field>
+</div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onCancel()">Cancel</button>
+      <button mat-button (click)="onCreate()">Create</button>
+      <p *ngIf="createFailed">Failed to create goal</p>
+</div>

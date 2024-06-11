@@ -1,0 +1,29 @@
+<h1>Goal: {{goal.category}}</h1>
+<img id="graph" src="assets/images/speech.png" alt="">
+
+
+<table>
+    <thead>
+        <tr>
+            <th class="date-col">Date</th>
+            <th class="ind-col">Independent</th>
+            <th class="prompted-col">Prompted</th>
+            <th class="sc-col">Self Corrected</th>
+            <th class="teach-col">Teaching</th>
+            <th class="notes-col">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of data">
+            <td class="date-col">{{data.date | date:'MM/dd hh:mm'}}</td>
+            <td class="ind-col">{{data.independent}}</td>
+            <td class="prompted-col">{{data.prompted}}</td>
+            <td class="sc-col">{{data.selfCorrected}}</td>
+            <td class="teach-col">{{data.teaching}}</td>
+            <td class="notes-col">{{data.notes}}</td>
+    </tbody>
+
+</table>
+
+
+<button id="addDataBtn" (click)="openCreateDataDialog()">Add New Data</button>
