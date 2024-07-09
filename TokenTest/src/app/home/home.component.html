@@ -3,19 +3,18 @@
         <app-navbar></app-navbar>
     </div>
     <div id="middle">
-        <div id="searchBar"> 
-            <mat-icon>search</mat-icon>
-            <input type="search" matInput placeholder="Search for student">
+        <div id="searchContainer">
+            <div id="searchBar"> 
+                <mat-icon>search</mat-icon>
+                <input type="search" [(ngModel)]="searchBarText" placeholder="Search for student">
+            </div>
+            <div *ngIf="filterProperty && filterProperty !== 'None'" id="filterInput">
+                <input [(ngModel)]="searchText" placeholder="Enter value" />
+            </div>
         </div>
         <div id="header">
             <h1>Students</h1>
-            <form ></form>
-            <!-- <mat-form-field >
-                <mat-label >Filter</mat-label>
-                <input [(value)]="filterProperty" (selectionChange) = "filterChanged()">
-                
-              </mat-form-field> <-->
-            <mat-form-field>
+            <mat-form-field id="sortForm">
                 <mat-label>Sort</mat-label>  
                 <mat-select [(value)]="sortProperty">
                     <mat-option>None</mat-option>
@@ -24,9 +23,18 @@
                     <mat-option value="dueDate">Due Date</mat-option>
                 </mat-select>
             </mat-form-field>
+                <mat-form-field id="filterForm">
+                    <mat-label>Filter</mat-label>  
+                    <mat-select [(value)]="filterProperty">
+                        <mat-option>None</mat-option>
+                        <mat-option value="age">Age</mat-option>
+                        <mat-option value="school">School</mat-option>
+                        <mat-option value="dueDate">Due Date</mat-option>
+                    </mat-select>
+                </mat-form-field>
         </div>
         <div id="studentList">
-            <app-student-list [filterProperty]="filterProperty" [sortProperty]="sortProperty" ></app-student-list>
+            <app-student-list [searchBarText]="searchBarText" [filterProperty]="filterProperty" [searchText]="searchText" [sortProperty]="sortProperty" ></app-student-list>
         </div>
     </div>
 

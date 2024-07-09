@@ -1,0 +1,169 @@
+
+
+::ng-deep * {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 100vh;
+}
+
+#header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #d7d1d1;
+}
+
+#header h1 {
+    flex: .2
+}
+
+#header mat-icon {
+    flex: .8;
+    padding: 1em;
+}
+
+
+#profileInfo {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #d7d1d1;
+    justify-content: center;
+    align-items: center;
+}
+#profileInfo img {
+    flex: .2;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#profileInfo p {
+    padding-top: .5rem;
+}
+#profileInfo mat-icon {
+    flex: .2;
+    padding: 1em;
+}
+/* ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled)  {
+    background-color: #f4f4f4;
+    height: 3rem;
+    width: 6rem;
+    font-size: .5rem;
+    padding-top:.15rem;
+    border-radius: 10px;
+} */
+::ng-deep .mdc-menu-surface.mat-mdc-select-panel {
+    background-color: #f4f4f4;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+    color: #aab2bd;
+
+}
+
+::ng-deep .mdc-text-field {
+    align-items: center!important;
+    width: 50%;
+}
+
+::ng-deep .mat-mdc-select-arrow svg {
+    color: #aab2bd;
+}
+
+mat-label {
+    color:#aab2bd;
+    font-weight: 450;
+    font-size: .75rem;
+}
+
+
+.calendar {
+    margin-top: 3rem;
+    background-color: #f4f4f4;
+    color:#610e0e;
+    border-radius: 15px;
+}
+
+::ng-deep .mat-calendar-body-cell-content.mat-focus-indicator {
+    color: black!important;
+}
+
+::ng-deep .mat-calendar-body-label{
+    color: black!important;
+}
+
+::ng-deep .mat-calendar-table-header th {
+    color: black!important;
+}
+
+
+::ng-deep .mat-mdc-select-value-text{
+    color: black!important;
+
+}
+
+::ng-deep .mat-mdc-button:not(:disabled){
+    color: black!important;
+}
+
+::ng-deep .mat-calendar-body-selected{
+    background-color: #84cca4!important;
+}
+
+#filterOption{
+    color: black;
+}
+
+#createStudentButton {
+    border-radius: 10px;
+    margin-top: 1rem;
+    border:none;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 530;
+}
+
+#createStudentButton:hover{
+    cursor:pointer;
+    background-color: #84cca4;
+}
+
+#dropDown{
+    cursor:pointer; 
+    color: #a7afbb;
+}
+
+mat-icon{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #a7afbb!important;
+}
+
+mat-menu-item:hover{
+    background-color: #84cca4!important;
+    color: white!important;
+}
+
+#dropdownIcon {
+    border:none;
+    outline: none;
+    background-color: transparent;
+}
+.dropdownItem:hover{
+    background-color: #c6e8d5!important;
+    color: white!important;
+}
+
+::ng-deep .mat-mdc-menu-content {
+    background-color: #f4f4f4;  
+    padding: .5rem;
+}

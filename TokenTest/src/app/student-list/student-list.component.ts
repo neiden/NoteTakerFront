@@ -16,7 +16,9 @@ import { SharedStudentService } from '../services/shared-student.service';
 export class StudentListComponent implements OnChanges{
 
   @Input() filterProperty: string = '';
+  @Input() searchText: string = '';
   @Input() sortProperty: string = '';
+  @Input () searchBarText: string = '';
 
   constructor(readonly api: DatabaseApiService, readonly router: ActivatedRoute, private sharedStudentService: SharedStudentService, private route: Router){}
   students: Student[] = [];
@@ -25,8 +27,11 @@ export class StudentListComponent implements OnChanges{
 
   ngOnChanges(changes: SimpleChanges): void {
     //console.log("Student list receiving changed filter: " + changes['filterProperty'].currentValue);
-    if (changes['filterProperty']){
-      this.changeFilter(changes['filterProperty'].currentValue);
+    if (changes['filterProperty'] || changes['searchText']){
+      this.applyFilter('filter');
+    }
+    if (changes['searchBarText']){
+      this.applyFilter('searchBar');
     }
     if (changes['sortProperty']){
       this.changeSort(changes['sortProperty'].currentValue);
@@ -50,13 +55,36 @@ export class StudentListComponent implements OnChanges{
     }
   }
 
-  changeFilter(newFilter: string){
-    console.log("Calling changeFilter with: " + newFilter);
-    if (newFilter) {
-      this.filteredStudents = this.students.filter(student => student.school.toLowerCase().includes(newFilter.toLowerCase()));
-    } else {
-      this.filteredStudents = this.students;
+  applyFilter(filterType: string){
+    let tempStudents = this.students;
+    console.log("Calling applyFilter with: " + this.filterProperty + " and "+ this.searchText);
+
+    if (filterType === 'filter'){
+      if (this.filterProperty) {
+        tempStudents = tempStudents.filter(student => (student as any)[this.filterProperty].toString().toLowerCase().includes(this.searchText.toLowerCase()));
+      }
     }
+
+    if (filterType === 'searchBar'){
+      tempStudents = tempStudents.filter(student => student.fName.toLowerCase().includes(this.searchBarText.toLowerCase()) || student.lName.toLowerCase().includes(this.searchBarText.toLowerCase()));
+    }
+    console.log("Filtered students: " + tempStudents.length);
+
+    this.filteredStudents = tempStudents;
+  }
+
+  changeFilter(filter: string){
+    console.log("Calling changeFilter with: " + filter + " and "+ this.searchText);
+    let tempStudents = this.students;
+
+    // Filter based on the filterProperty if it's not empty
+    if (this.filterProperty) {
+      tempStudents = tempStudents.filter(student => (student as any)[this.filterProperty].toString().toLowerCase().includes(this.searchText.toLowerCase()));
+    }
+
+    // Add sorting logic here if needed
+
+    this.filteredStudents = tempStudents;
   }
 
   ngOnInit(){

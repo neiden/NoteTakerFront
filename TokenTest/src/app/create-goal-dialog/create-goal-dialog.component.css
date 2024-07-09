@@ -23,16 +23,17 @@
     border-radius: 5px;
     padding: 0.5rem;
     font-size: 1rem;
-    width:100%;
+
+    width: 100%;
     color: black!important;
 }
 
-:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled){
+/* :host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled){
     background-color: #f1f9f6;
-    height: 1rem;
-    width: 6rem;
+    height: 3rem;
+    width: 10rem;
     font-size: .5rem;
-}
+} */
 
 
 

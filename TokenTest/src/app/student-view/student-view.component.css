@@ -15,6 +15,12 @@ p {
     padding: 10px;
 }
 
+h1 {
+    color: black;
+    font-size: .5rem;
+
+}
+
 
 mat-icon {
     font-weight: 10;
@@ -27,7 +33,7 @@ mat-icon {
     padding-right: 1rem;
     display: flex;
     flex-direction: column;
-    flex: .65;
+    flex: .86;
     background-color: white;
 }
 
@@ -38,6 +44,7 @@ mat-icon {
     background-color: white;
     padding-right: 1rem;
 }
+
 
 #navbar{
     flex: .1;
@@ -101,9 +108,14 @@ mat-icon {
 }
 
 
-table{
-    margin-top: 1rem;
-}
+table {
+    width: 100%;
+    table-layout: fixed; /* This makes the table respect the set widths */
+    justify-content: left;
+    text-align: left;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
 
 
 
@@ -154,9 +166,10 @@ table{
     padding-bottom: .7rem;
   }
   
-  td {
+  tr td {
       padding-top: .7rem;
       padding-bottom: .7rem;
+      padding-left: 1rem;
   }
   
   tbody tr:hover {
@@ -171,3 +184,104 @@ table{
       padding-left: 1rem;
       padding-bottom: 1rem;
   }
+
+
+  img {
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  
+  
+  #header {
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 2rem;
+      }
+
+#studentOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#studentOptions button{
+    background-color: white;
+    color: #a7afbb;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#studentLogoHeader{
+    display: flex;
+    flex-direction:row;
+
+}
+      
+#studentInfoHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    gap: 1rem;
+    border-bottom: 1px solid #d7d1d1;
+    padding-bottom: 1.5rem;
+    margin-top: 1rem;
+}
+#studentHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-size: 3rem;
+    margin-left: 1rem;
+}
+
+#studentHeader h1 {
+    margin: 0;  
+    font-size: 15px;
+}
+
+#header h1 {
+    font-size: 1.5rem;
+}
+
+#header mat-icon {
+    flex: .8;
+    padding: 1em;
+}
+
+::ng-deep .mat-mdc-menu-content {
+    background-color: #f4f4f4;  
+    padding: .5rem;
+}
+
+mat-icon{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #a7afbb!important;
+}
+
+mat-menu-item:hover{
+    background-color: #84cca4!important;
+    color: white!important;
+}
+
+
+#createGoalButton:hover{
+    cursor:pointer;
+    background-color: #84cca4;
+}
+
+#createGoalButton {
+    border-radius: 10px;
+    margin-top: 1rem;
+    border:none;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 530;
+}

@@ -6,21 +6,24 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { StudentListComponent } from '../student-list/student-list.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormsModule } from '@angular/forms';
 import { Route, Router, RouterLink } from '@angular/router';
 import { MatDialogModule, MatDialog} from '@angular/material/dialog';
 import { NewStudentDialogComponent } from '../new-student-dialog/new-student-dialog.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  imports: [MatMenuModule, MatSelectModule, MatFormFieldModule, MatIconModule, NavbarComponent, StudentListComponent, MatDatepickerModule, MatNativeDateModule, RouterLink, MatDialogModule],
+  imports: [FormsModule, CommonModule, MatMenuModule, MatSelectModule, MatFormFieldModule, MatIconModule, NavbarComponent, StudentListComponent, MatDatepickerModule, MatNativeDateModule, RouterLink, MatDialogModule],
   standalone: true
 })  
 export class HomeComponent implements OnInit {
   filterProperty: string = '';
+  searchText: string = '';
+  searchBarText: string= '';
   sortProperty: string = '';
   hideRequiredControl = new FormControl(false);
   selectedDate: Date = new Date();

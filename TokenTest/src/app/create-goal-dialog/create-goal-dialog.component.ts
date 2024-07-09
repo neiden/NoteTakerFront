@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,6 +10,7 @@ import { LoadingindicatorService } from '../services/loadingindicator.service';
 import { SharedStudentService } from '../services/shared-student.service';
 import { Goal } from '../models/goal.model';
 import { CommonModule } from '@angular/common';
+import { SharedGoalService } from '../services/shared-goal.service';
 
 @Component({
   selector: 'app-create-goal-dialog',
@@ -18,11 +19,19 @@ import { CommonModule } from '@angular/common';
   imports: [MatDialogModule, FormsModule, MatFormFieldModule, MatInputModule, CommonModule],
   standalone: true
 })
-export class CreateGoalDialogComponent {
+export class CreateGoalDialogComponent implements OnInit{
   goalCategory = '';
   createFailed: boolean = false;
-  constructor(private api: DatabaseApiService, private dialogRef: MatDialogRef<CreateGoalDialogComponent>, private loadingService: LoadingindicatorService, private studentService: SharedStudentService) { }
+  studentId = 0;
+  constructor(private sharedGoalService: SharedGoalService,private api: DatabaseApiService, private dialogRef: MatDialogRef<CreateGoalDialogComponent>, private loadingService: LoadingindicatorService, private studentService: SharedStudentService) { }
 
+  ngOnInit(): void {
+      this.studentService.sharedStudent.subscribe((student) => {
+        this.studentId = student.id;
+      });
+  }
+
+  
   onCancel(): void {
     this.dialogRef.close();
   }
@@ -32,13 +41,15 @@ export class CreateGoalDialogComponent {
     this.loadingService.loadingOn();
     var goal = {} as Goal;
     goal.category = this.goalCategory;
-
+    goal.recentData = -1;
+    goal.studentId = this.studentId;
+    //TODO: Change the backend to also parse the teacher ID from JWT token and add it to the goal object
+    // Also call the student service to get the current student ID that this goal is being created for.
     this.api.createGoal(goal).subscribe(
-      {next: (data:any) => {
+      {next: (data: any) => {
         this.loadingService.loadingOff();
         this.dialogRef.close();
-        console.log("Goal created successfully: " + data.category);
-        //this.studentService.refreshGoalList();
+        this.sharedGoalService.refreshGoalList();
       },   
       error: (e) => {
         console.log("Error creating goal: " + e);

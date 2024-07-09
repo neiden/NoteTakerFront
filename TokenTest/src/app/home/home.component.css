@@ -38,14 +38,14 @@
     padding-right: 1rem;
 }
 
-#searchBar input{
+ input{
     border: none;
     color: #aab2bd;
     background-color: #f4f4f4;
     font-weight: 525;
 }
 
-#searchBar input:focus{
+input:focus{
     border: none;
     outline: none   ;
 }
@@ -53,6 +53,19 @@
 #searchBar mat-icon{
     position:relative;
     margin-right: 10px;
+    border: none;
+}
+
+#filterInput {
+    border: none;
+    color: #aab2bd;
+    background-color: #f4f4f4;
+    font-weight: 525;
+    border-radius:10px;
+    width: 25%;
+    height: 2rem;
+    margin-top: 1rem;
+    padding: .5em;
 }
 
 #searchBar{
@@ -71,9 +84,19 @@
 #header {
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     border-bottom: 1px solid #d7d1d1;
 }
+
+
+#filterForm{
+    margin-left: 2rem;
+}
+
+#sortForm{
+    margin-left: 35rem;
+}
+
 
 #header h1 {
     flex: .2
@@ -83,6 +106,7 @@
     flex: .8;
     padding: 1em;
 }
+
 
 #studentList {
     padding-top: 2rem;
@@ -196,8 +220,8 @@ mat-label {
 }
 
 #dropDown{
-    cursor:pointer; 
     color: #a7afbb;
+    cursor:pointer; 
 }
 
 mat-icon{
@@ -225,4 +249,13 @@ mat-menu-item:hover{
 ::ng-deep .mat-mdc-menu-content {
     background-color: #f4f4f4;  
     padding: .5rem;
+}
+
+
+
+#searchContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
 }

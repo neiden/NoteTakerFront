@@ -1,0 +1,82 @@
+<h2 mat-dialog-title>Update {{ entityType | titlecase }}</h2>
+<mat-dialog-content >
+    <div class="inputs">
+        <form [formGroup]="updateForm" (ngSubmit)="updateEntity()">
+            <!-- Student Fields -->
+            <div *ngIf="entityType === 'student'">
+                <div class="form-group">
+                    <label for="fName">First Name</label>
+                    <input id="fName" type="text" class="form-control" formControlName="fName">
+                    <div *ngIf="updateForm.get('fName')?.errors?.['required']" class="alert alert-danger">
+                        First name is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lName">Last Name</label>
+                    <input id="lName" type="text" class="form-control" formControlName="lName">
+                    <div *ngIf="updateForm.get('lName')?.errors?.['required']" class="alert alert-danger">
+                        Last name is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input id="age" type="number" class="form-control" formControlName="age">
+                    <div *ngIf="updateForm.get('age')?.errors?.['required']" class="alert alert-danger">
+                        Age is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Due Date</label>
+                    <input id="dueDate" type="date" class="form-control" formControlName="dueDate">
+                </div>
+                    <!-- <input id="dueDate" type="date" class="form-control" formControlName="dueDate"> -->
+
+                <div class="form-group">
+                    <label for="school">School</label>
+                    <input id="school" type="text" class="form-control" formControlName="school">
+                </div>
+            </div>
+
+            <div *ngIf="entityType === 'goal'">
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input id="category" type="text" class="form-control" formControlName="category">
+                </div>
+            </div>
+
+            <div *ngIf="entityType === 'data'">
+                <div class="form-group">
+                    <label for="independent">Independent</label>
+                    <input id="independent" type="number" class="form-control" formControlName="independent">
+                </div>
+                <div class="form-group">
+                    <label for="prompted">Prompted</label>
+                    <input id="prompted" type="number" class="form-control" formControlName="prompted">
+                </div>
+                <div class="form-group">
+                    <label for="selfCorrected">Self Corrected</label>
+                    <input id="selfCorrected" type="number" class="form-control" formControlName="selfCorrected">
+                </div>
+                <div class="form-group">
+                    <label for="teaching">Teaching</label>
+                    <input id="teaching" type="number" class="form-control" formControlName="teaching">
+                </div>
+                <div class="form-group">
+                    <label for="note">Note</label>
+                    <input id="note" type="text" class="form-control" formControlName="note">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input id="date" type="date" class="form-control" formControlName="date">
+                </div>
+            </div>
+        </form>
+    </div>
+  
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <div class="optionButtons">
+        <button mat-button [mat-dialog-close]="false">Cancel</button>
+        <button mat-button color="primary" [disabled]="!updateForm.valid" (click)="updateEntity()">Update</button>
+    </div>
+</mat-dialog-actions>

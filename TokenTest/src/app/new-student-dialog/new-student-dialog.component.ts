@@ -44,7 +44,7 @@ export class NewStudentDialogComponent {
     student.dueDate = this.dueDate;
     student.school = this.school;
     
-    this.api.createStudent(student, token).subscribe(
+    this.api.createStudent(student).subscribe(
       {next: (data:any) => {
         this.loadingService.loadingOff();
         this.dialogRef.close();

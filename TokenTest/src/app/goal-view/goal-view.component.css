@@ -1,3 +1,27 @@
+#left{
+  flex: .1;
+  display:flex;
+  flex-direction:column;
+  /* background-color: #e6feed; */
+  background-color: #fdfdff;
+  border-right: 1px solid #d7d1d1;
+}
+
+#wrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 100vh;
+}
+
+#middle{
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
 #graph{
     margin: 0 auto;
     display: block;
@@ -10,11 +34,13 @@
 
 
 table {
-    width: 100%;
-    table-layout: fixed;
-    margin-top: 2rem;
-    margin-left: 2rem;
-  }
+  width: 100%;
+  table-layout: fixed; /* This makes the table respect the set widths */
+  justify-content: left;
+  text-align: left;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
   
   .date-col,
   .ind-col,
@@ -52,6 +78,10 @@ table {
     width: 20%;
   }
 
+  .actions-col{
+    width: 10%
+  }
+
 
 #addDataBtn{
     margin-left: 2rem;
@@ -67,4 +97,119 @@ table {
     cursor:pointer;
     background-color: #84cca4;
     
+}
+
+
+
+td {
+  padding-left: 1rem;
+}
+
+tbody {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+tbody tr:nth-child(odd){
+height: 3rem;
+background-color:white;
+cursor:pointer;
+outline: none;
+text-align: left;   
+padding: 1rem;
+padding-top: .7rem;
+padding-bottom: .7rem;
+}
+
+tbody tr:nth-child(even){
+height: 3rem;
+background-color:#f1f9f6;
+cursor:pointer;
+outline: none;
+text-align: left;   
+padding: 1rem;
+padding-top: .7rem;
+padding-bottom: .7rem;
+}
+
+td {
+  padding-top: .7rem;
+  padding-bottom: .7rem;
+}
+
+tbody tr:hover {
+  background-color: #84cca4;
+  color: white;
+  padding: .2rem;
+  padding-top: .7rem;
+  padding-bottom: .7rem;
+}
+
+thead th {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+#goalOptions{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  gap: 1rem;
+}
+
+#goalOptions button{
+  background-color: white;
+  color: #a7afbb;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: .5rem;
+}
+
+#rowOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  gap: 1rem;
+}
+
+#rowOptions button{
+  background-color: inherit;
+  color: #a7afbb;
+  border: none;
+  cursor: pointer;
+}
+
+#rowOptions button:hover{
+  color: white;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+#goalHeader {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+:host #dateRange {
+  width: 20rem;
+  
+}
+
+#dateLabel{
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#datePicker{
+  color: black;
+
 }

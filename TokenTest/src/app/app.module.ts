@@ -22,6 +22,11 @@ import { CreateGoalDialogComponent } from './create-goal-dialog/create-goal-dial
 import { CreateDataDialogComponent } from './create-data-dialog/create-data-dialog.component';
 import { GoalViewComponent } from './goal-view/goal-view.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NgChartsModule } from 'ng2-charts';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
+
+
 
 
 
@@ -44,7 +49,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgChartsModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

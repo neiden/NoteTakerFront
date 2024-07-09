@@ -3,27 +3,21 @@
         <app-navbar></app-navbar>
     </div>
     <div id="contentWrapper">
-        <p>{{student.fName}} {{student.lName}} {{student.age}} {{student.school}} {{student.id}}</p>
-        <textarea id="noteInput" placeholder="Add a note" #noteContent></textarea>
-        <button id="createButton" (click)="submitNote(noteContent)">Create Note</button>    
-
-        <table>
-            <thead>
-                <tr>
-                    <th class="name-col">Date</th>
-                    <th class="school-col">Comment</th>
-            </thead>
-            <tbody> 
-                <div *ngIf="loadingNotes; else notesList">
-                    <div class="loading-indicator"></div>
+        <div id="studentInfoHeader">
+            <div id="studentLogoHeader">
+                <img src="assets/images/cat.png" alt="">
+                <div id="studentHeader">
+                    <h1>{{student.fName}} {{student.lName}}</h1>
+                    <h1>{{student.school}}</h1>
+                    <h1>{{student.age}} years old</h1>
                 </div>
-                <ng-template #notesList>
-                    <tr *ngFor="let note of notes">
-                        <td class="name-col">{{note.date | date:'MM/dd hh:mm'}}</td>
-                        <td class="school-col">{{note.content}}</td>
-                </ng-template>
-            </tbody>
-        </table>
+            </div>
+            <div id="studentOptions">
+                <button id="deleteBtn" mat-button (click)="updateStudent()"><i class="material-icons">settings</i></button>
+                <button id="editBtn" mat-button (click)="deleteStudent()"><i class="material-icons">delete</i></button>
+            </div>
+        </div>
+
         <table>
             <thead>
                 <tr>
@@ -36,19 +30,25 @@
                     <div class="loading-indicator"></div>
                 </div>
                 <ng-template #goalsList>
-                    <tr *ngFor="let goal of goals" (click)="openGoalView()">
+                    <tr *ngFor="let goal of goals" (click)="openGoalView(goal)">
                         <td class="goal-col">{{goal.category}}</td>
-                        <td class="recent-col">{{goal.recentData}}</td>
+                        <td class="recent-col"> 
+                            <div *ngIf="getRecentDataForGoal(goal.id)">
+                                {{getRecentDataForGoal(goal.id) | date:'MM/dd hh:mm'}}
+                            </div>
+                        </td>
                     </tr>
                 </ng-template> 
             </tbody>
 
         </table>
-        <button (click)="openDialog()">Create Goal</button>
+
     </div>
     <div id="right">
-
+        <app-right-sidebar></app-right-sidebar>
+        <div id="createGoal">
+            <button id="createGoalButton" mat-raised-button color="primary" (click)="openDialog()">Create Goal</button>
+        </div>
     </div>
-</div>
-
+</div>  
 

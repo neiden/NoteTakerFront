@@ -1,6 +1,26 @@
 <h1 mat-dialog-title>Create New Student</h1>
 <div mat-dialog-content class="field-wrapper">
-  <mat-form-field >
+  <div class="mat-form">
+    <label for="First Name">First Name</label>
+    <input type="text" class="input" [(ngModel)]="fname" required>
+  </div>
+  <div class="mat-form">
+    <label for="Last Name">Last Name</label>
+    <input type="text" class="input" [(ngModel)]="lname" required>
+  </div>
+  <div class="mat-form">
+    <label for="School">School</label>
+    <input type="text" class="input" [(ngModel)]="school" required>
+  </div>
+  <div class="mat-form">
+    <label for="Age">Age</label>
+    <input type="number" class="input" [(ngModel)]="age" required>
+  </div>
+  <div class="mat-form">
+    <label for="Date">Date</label>
+    <input type="date" class="input" [(ngModel)]="dueDate" required>
+  </div>
+  <!-- <mat-form-field >
     <input class="input" placeholder="First Name" [(ngModel)]="fname" required>
   </mat-form-field>
   <mat-form-field>
@@ -16,7 +36,7 @@
     <input class="input" matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="dueDate">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+  </mat-form-field> -->
 </div>
     <div mat-dialog-actions>
       <button mat-button (click)="onCancel()">Cancel</button>
