@@ -16,15 +16,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { NewStudentDialogComponent } from './new-student-dialog/new-student-dialog.component';
 import { AuthInterceptor } from './auth-interceptor';
-import { CreateGoalDialogComponent } from './create-goal-dialog/create-goal-dialog.component';
-import { CreateDataDialogComponent } from './create-data-dialog/create-data-dialog.component';
-import { GoalViewComponent } from './goal-view/goal-view.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgChartsModule } from 'ng2-charts';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
+
 
 
 

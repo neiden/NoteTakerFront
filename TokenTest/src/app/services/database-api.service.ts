@@ -11,8 +11,8 @@ import { of } from 'rxjs';
 })
 export class DatabaseApiService {
 
-  //apiRoot = "https://notetakerbackend.azurewebsites.net";
-  apiRoot = "https://localhost:7089"
+  apiRoot = "https://notetakerbackend.azurewebsites.net";
+  //apiRoot = "https://localhost:7089"
 
   constructor(private http: HttpClient) { }
 
