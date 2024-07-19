@@ -42,6 +42,7 @@ label {
 input[type="email"],
 input[type="text"],
 input[type="password"] {
+    width: auto;
     width: 100%;
     padding: 1rem;
     font-size: 1em;
@@ -51,7 +52,6 @@ input[type="password"] {
 
 /* Style the submit button */
 input[type="submit"] {
-    width: auto;
     padding: 2rem;
     background-color: #000000;
     color: #ffffff;
@@ -75,6 +75,11 @@ input[type="submit"] {
 /* Style the heading */
 h1 {
     text-align: center;
+}
+
+#loginRight h1{
+    margin-bottom: 5rem;
+    position: center;
 }
 
 div {
@@ -130,6 +135,7 @@ div {
     font-style: bold;
     font-size: 2.25em;
 }
+
 
 #loginLeft p{
     position: relative;

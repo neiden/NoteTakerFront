@@ -35,7 +35,9 @@ export class LoginComponent {
           this.loginFailed = false;
         },
           error: (e) => {
-            console.log(e),
+            if (e.message) {
+              console.log(e.message);
+            }
             this.loginFailed = true;
             this.loadingService.loadingOff();
           }

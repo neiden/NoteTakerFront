@@ -8,6 +8,7 @@ import { StudentViewComponent } from './student-view/student-view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {PermissionsService} from './services/permissions.service';
 import { GoalViewComponent } from './goal-view/goal-view.component';
+import { VerifyAccountComponent } from './verify-account/verify-account.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent,canActivate: [PermissionsService]},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'students', component: StudentListComponent, canActivate: [PermissionsService]},
   {path: 'student-view', component: StudentViewComponent,   canActivate: [PermissionsService]},
   {path: 'goal-view', component: GoalViewComponent , canActivate: [PermissionsService]},
+  {path: 'verify-account', component: VerifyAccountComponent},
   {path: '**', component: PageNotFoundComponent},
 ];
 

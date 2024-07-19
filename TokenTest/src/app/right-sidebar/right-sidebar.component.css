@@ -107,7 +107,6 @@ mat-label {
 
 ::ng-deep .mat-mdc-select-value-text{
     color: black!important;
-
 }
 
 ::ng-deep .mat-mdc-button:not(:disabled){

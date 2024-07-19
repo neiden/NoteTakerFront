@@ -97,11 +97,12 @@ div {
 }
 
 #loginRight img{
-    max-width: 100%;
+    max-width: 90%;
+    height: 15rem;
     width: auto;
     position: relative;
-    bottom: 15%;
-
+    margin-bottom: 5rem;
+    left: -4%;
 }
 
 #loginFailed {
@@ -138,7 +139,7 @@ div {
     bottom: 10%;
     font-weight: 525;
     font-style: bold;
-    font-size: 2..25em;
+    font-size: 2.25em;
 }
 
 #loginLeft p{

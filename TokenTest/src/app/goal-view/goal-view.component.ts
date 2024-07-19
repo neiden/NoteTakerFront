@@ -157,7 +157,7 @@ export class GoalViewComponent implements OnInit {
           this.loadingData = false;
 
           const parsedData = this.parseData(this.data);
-          
+            
           for(let i = 0; i < parsedData.length; i++){
             this.lineChartData.datasets[i].data = parsedData[i];
           }

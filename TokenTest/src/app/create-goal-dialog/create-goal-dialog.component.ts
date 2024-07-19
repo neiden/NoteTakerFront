@@ -43,8 +43,7 @@ export class CreateGoalDialogComponent implements OnInit{
     goal.category = this.goalCategory;
     goal.recentData = -1;
     goal.studentId = this.studentId;
-    //TODO: Change the backend to also parse the teacher ID from JWT token and add it to the goal object
-    // Also call the student service to get the current student ID that this goal is being created for.
+
     this.api.createGoal(goal).subscribe(
       {next: (data: any) => {
         this.loadingService.loadingOff();

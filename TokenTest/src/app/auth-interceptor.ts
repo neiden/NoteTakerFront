@@ -6,7 +6,7 @@ export class AuthInterceptor implements HttpInterceptor {
     
     intercept(req: HttpRequest<any>, next: HttpHandler) {
         console.log("Intercepted request");
-        if (req.url.includes('login')) {
+        if (req.url.includes('login') || req.url.includes('verify-account') || req.url.includes('register')){
             return next.handle(req);
         }
         const token = localStorage.getItem('token');

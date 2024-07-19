@@ -52,12 +52,12 @@ export class StudentViewComponent {
         this.loadData(goals as Goal[]);
         
       });
-  });
     this.sharedGoalService.getRefreshGoalList().subscribe((data) => {
       this.loadingGoals = true;
       this.api.getGoals(this.student.id).subscribe((goals) => {
         this.loadData(goals as Goal[]);
       });
+  });
     });
   }
 

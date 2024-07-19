@@ -65,5 +65,10 @@ mat-icon {
 }
 
 img{
-    margin-top: .5rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    width: 15rem;
+    height: 2rem;
 }

@@ -88,7 +88,7 @@ export class DatabaseApiService {
     return this.http.put(this.apiRoot + '/Data/update', data);
   }
 
-  getDataById(dataId: number){
+  getDataById(dataId: number){  
     return this.http.get(this.apiRoot + '/Data/' + dataId);
   }
   updateRecentData(goalId: number, dataId: number){
@@ -97,11 +97,9 @@ export class DatabaseApiService {
 
   getData(studentId: number, goalId: number){
     return this.http.get(this.apiRoot + '/Data/get/student/' + studentId + '/goal/' + goalId);
-    // return of([
-    //   new Data(1, 10, 10, 10, 10, new Date(), 'This is a note', 1, 1),
-    //   new Data(2, 20, 20, 20, 20, new Date(), 'This is a note', 1, 1),
-    //   new Data(3, 30, 30, 30, 30, new Date(), 'This is a note',1 , 1),
-    //   new Data(4, 40, 40, 40, 40, new Date(), 'This is a note',1, 1)
-    // ])
+  }
+
+  authenticateAccount(token: string, email: string){ 
+    return this.http.post(this.apiRoot + '/User/verify-email/'+ token + '/' + email, {});
   }
 }
