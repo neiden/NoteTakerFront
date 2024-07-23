@@ -13,7 +13,7 @@ export class DatabaseApiService {
 
   //apiRoot = "https://notetakerbackend.azurewebsites.net";
   apiRoot = "https://localhost:7089"
-
+  
   constructor(private http: HttpClient) { }
 
   login(username?: string, password?: string) {
