@@ -14,24 +14,26 @@
         </div>
         <div id="header">
             <h1>Students</h1>
-            <mat-form-field id="sortForm">
-                <mat-label>Sort</mat-label>  
-                <mat-select [(value)]="sortProperty">
-                    <mat-option>None</mat-option>
-                    <mat-option value="age">Age</mat-option>
-                    <mat-option value="school">School</mat-option>
-                    <mat-option value="dueDate">Due Date</mat-option>
-                </mat-select>
-            </mat-form-field>
-                <mat-form-field id="filterForm">
-                    <mat-label>Filter</mat-label>  
-                    <mat-select [(value)]="filterProperty">
+            <div id="filterOptions">
+                <mat-form-field id="sortForm">
+                    <mat-label>Sort</mat-label>  
+                    <mat-select [(value)]="sortProperty">
                         <mat-option>None</mat-option>
                         <mat-option value="age">Age</mat-option>
                         <mat-option value="school">School</mat-option>
                         <mat-option value="dueDate">Due Date</mat-option>
                     </mat-select>
                 </mat-form-field>
+                    <mat-form-field id="filterForm">
+                        <mat-label>Filter</mat-label>  
+                        <mat-select [(value)]="filterProperty">
+                            <mat-option>None</mat-option>
+                            <mat-option value="age">Age</mat-option>
+                            <mat-option value="school">School</mat-option>
+                            <mat-option value="dueDate">Due Date</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+            </div>
         </div>
         <div id="studentList">
             <app-student-list [searchBarText]="searchBarText" [filterProperty]="filterProperty" [searchText]="searchText" [sortProperty]="sortProperty" ></app-student-list>

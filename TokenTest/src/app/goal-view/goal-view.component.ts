@@ -195,7 +195,6 @@ export class GoalViewComponent implements OnInit {
         if (this.chart.options && this.chart.options.scales && this.chart.options.scales['x'] && this.chart.chart) {
           const formattedStartDate = `${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate()}`;
           const formattedEndDate = `${endDate.getFullYear()}-${endDate.getMonth() + 1}-${endDate.getDate()}`;
-          console.log("updated x axis with min: ", formattedStartDate, " and max: ", formattedEndDate);
           
           (this.chart.chart.options.scales as any)['x'].min = formattedStartDate;
           (this.chart.chart.options.scales as any)['x'].max = formattedEndDate;
@@ -232,13 +231,11 @@ export class GoalViewComponent implements OnInit {
         this.loadingService.loadingOn();
         this.api.deleteData(data.id).subscribe({
           next: (data: any) => {
-            console.log("Data deleted: " + data);
             this.loadingService.loadingOff();
             this.sharedDataService.refreshDataList();
             this.chart?.update();
           },
           error: (e) => {
-            console.log("Error deleting data: " + e);
             this.loadingService.loadingOff();
           }
         });

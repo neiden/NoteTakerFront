@@ -19,6 +19,8 @@ import {MatInputModule} from '@angular/material/input';
 import { AuthInterceptor } from './auth-interceptor';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgChartsModule } from 'ng2-charts';
+import { SettingsComponent } from './settings/settings.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 
@@ -31,6 +33,7 @@ import { NgChartsModule } from 'ng2-charts';
     LoginComponent,
     RegisterComponent,
     FooterComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

@@ -102,4 +102,8 @@ export class DatabaseApiService {
   authenticateAccount(token: string, email: string){ 
     return this.http.post(this.apiRoot + '/User/verify-email/'+ token + '/' + email, {});
   }
+
+  resetPassword(email: string){
+    return this.http.post(this.apiRoot + '/User/reset-password/', email);
+  }
 }

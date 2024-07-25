@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
   }
 
   filterChanged(){
-    console.log("changing filter: " + this.filterProperty);
+    //console.log("changing filter: " + this.filterProperty);
   }
 
 }

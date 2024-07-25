@@ -84,17 +84,23 @@ input:focus{
 #header {
     display:flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     border-bottom: 1px solid #d7d1d1;
 }
 
 
 #filterForm{
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 #sortForm{
-    margin-left: 35rem;
+
+}
+
+#filterOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 
@@ -135,7 +141,7 @@ input:focus{
     flex: .2;
     padding: 1em;
 }
-::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled)  {
+:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled)  {
     background-color: #f4f4f4;
     height: 3rem;
     width: 6rem;

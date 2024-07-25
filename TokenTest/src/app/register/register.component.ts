@@ -15,7 +15,7 @@ export class RegisterComponent {
       password: new FormControl(''),
       email: new FormControl('')
     })
-
+    errorMessage = "";
     registrationFailed: boolean = false;
 
     constructor(private api: DatabaseApiService,  private loadingService: LoadingindicatorService, private router: Router){}
@@ -38,6 +38,12 @@ export class RegisterComponent {
             console.log(e),
             this.registrationFailed = true;
             this.loadingService.loadingOff();
+            if (e.error.message){
+              this.errorMessage = e.error.message;
+            }
+            else{
+              this.errorMessage = "Registration failed due to an unexpected error. Please try again later.";
+            }
           }
         })
     }
