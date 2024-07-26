@@ -33,7 +33,7 @@ export class ResetPasswordComponent {
       this.resetFailed = true;
       return;
     }
-    this.api.resetPassword(email!).subscribe(
+    this.api.sendResetPasswordEmail(email!).subscribe(
       {next: (d: any) => {
         this.router.navigate(['/login']);
         this.loadingService.loadingOff();

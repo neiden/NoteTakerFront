@@ -21,6 +21,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { NgChartsModule } from 'ng2-charts';
 import { SettingsComponent } from './settings/settings.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { VerifiedResetPasswordComponent } from './verified-reset-password/verified-reset-password.component';
 
 
 

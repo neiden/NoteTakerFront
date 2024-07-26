@@ -222,3 +222,27 @@ h1 {
   width: fit-content;
   border-radius: 10px;
 }
+
+:host ::ng-deep .mat-date-range-input-container {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+:host ::ng-deep .mat-date-range-input-separator {
+  transition: opacity 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 0 4px;
+  color: black;
+}
+
+
+:host ::ng-deep .mat-mdc-icon-button {
+  height: var(--mdc-icon-button-state-layer-size, 48px);
+  width: var(--mdc-icon-button-state-layer-size, 48px);
+  color: var(--mdc-icon-button-icon-color, inherit);
+  border-radius: 50%;
+  flex-shrink: 0;
+  text-align: center;
+  color: black;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

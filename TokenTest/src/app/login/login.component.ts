@@ -16,6 +16,8 @@ export class LoginComponent {
     username: new FormControl(''),
     password: new FormControl('')
   })  
+  
+  errorMessage = "";
 
   loginFailed: boolean = false;
 
@@ -35,8 +37,11 @@ export class LoginComponent {
           this.loginFailed = false;
         },
           error: (e) => {
-            if (e.message) {
-              console.log(e.message);
+            if (e.error.message) {
+              this.errorMessage = e.error.message;
+            }
+            else{
+              this.errorMessage = "Login failed due to an unexpected error. Please try again later.";
             }
             this.loginFailed = true;
             this.loadingService.loadingOff();

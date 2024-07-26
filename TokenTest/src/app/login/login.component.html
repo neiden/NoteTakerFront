@@ -22,7 +22,7 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required formControlName="password">
                     <a routerLink="/reset-password" routerLinkActive="active" id="forgotPass">Forgot password?</a>
-                    <p *ngIf="loginFailed" id="loginFailed">Incorrect username or password</p>
+                    <p *ngIf="loginFailed" id="loginFailed">{{errorMessage}}</p>
                     <button [disabled]="!loginForm.valid" type="submit" id="login-button">Sign in</button>
                 </form>
                 

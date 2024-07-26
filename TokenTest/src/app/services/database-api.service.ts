@@ -11,8 +11,8 @@ import { of } from 'rxjs';
 })
 export class DatabaseApiService {
 
-  //apiRoot = "https://notetakerbackend.azurewebsites.net";
-  apiRoot = "https://localhost:7089"
+  apiRoot = "https://notetakerbackend.azurewebsites.net";
+  //apiRoot = "https://localhost:7089"
   
   constructor(private http: HttpClient) { }
 
@@ -91,6 +91,7 @@ export class DatabaseApiService {
   getDataById(dataId: number){  
     return this.http.get(this.apiRoot + '/Data/' + dataId);
   }
+
   updateRecentData(goalId: number, dataId: number){
     return this.http.put(this.apiRoot + '/Goal/recentdata/' + goalId + '/' + dataId, {});
   }
@@ -103,7 +104,12 @@ export class DatabaseApiService {
     return this.http.post(this.apiRoot + '/User/verify-email/'+ token + '/' + email, {});
   }
 
-  resetPassword(email: string){
-    return this.http.post(this.apiRoot + '/User/reset-password/', email);
+  sendResetPasswordEmail(email: string){
+    return this.http.post(this.apiRoot + '/User/reset-password/' + email, {});
   }
+
+  changePassword(userId: number, token: string, password: string){
+    return this.http.post(this.apiRoot + '/User/reset-password/'+ userId + '/' + token + '/' + password, {});
+  }
+
 }

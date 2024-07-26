@@ -10,12 +10,14 @@ import {PermissionsService} from './services/permissions.service';
 import { GoalViewComponent } from './goal-view/goal-view.component';
 import { VerifyAccountComponent } from './verify-account/verify-account.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { VerifiedResetPasswordComponent } from './verified-reset-password/verified-reset-password.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent,canActivate: [PermissionsService]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'reset-password', component: ResetPasswordComponent},
+  {path: 'reset-password/reset', component: VerifiedResetPasswordComponent},
   {path: 'home', component: HomeComponent, canActivate: [PermissionsService]},
   {path: 'student-view', component: StudentViewComponent,   canActivate: [PermissionsService]},
   {path: 'goal-view', component: GoalViewComponent , canActivate: [PermissionsService]},
