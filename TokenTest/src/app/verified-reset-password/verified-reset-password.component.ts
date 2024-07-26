@@ -45,7 +45,13 @@ export class VerifiedResetPasswordComponent {
 
   onSubmit(){
     var password = this.passwordForm.controls.password.value;
-
+    var confirmPassword = this.passwordForm.controls.confirmPassword.value;
+    if (password != confirmPassword){
+      this.errorMessage = "Passwords do not match";
+      this.loading = false;
+      this.passwordFailed = true;
+      return;
+    }
     this.api.changePassword(this.userId, this.token, password!).subscribe({
       next: (response) => { 
         console.log("Account verified!")
