@@ -202,9 +202,3 @@ form {
     font-style: underline;
     margin-left: .5rem;
 }
-
-:host ::ng-deep .mat-date-range-input-container {
-    display: flex;
-    align-items: center;
-    color: black;
-}

@@ -7,5 +7,5 @@ import { LoadingindicatorComponent } from './loadingindicator/loadingindicator.c
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TokenTest';
+  title = 'FluentFlow';
 }
