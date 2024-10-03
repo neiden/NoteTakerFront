@@ -22,6 +22,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { SettingsComponent } from './settings/settings.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { VerifiedResetPasswordComponent } from './verified-reset-password/verified-reset-password.component';
+import { UploadExcelComponent } from './upload-excel/upload-excel.component';
 
 
 

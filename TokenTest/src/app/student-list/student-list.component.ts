@@ -90,18 +90,33 @@ export class StudentListComponent implements OnChanges{
   ngOnInit(){
     const token = localStorage.getItem('token')
     this.api.getStudents(token!).subscribe((students) => {
-      this.students = students as Student[];
+      let studentList = students as Student[];
+      studentList.forEach((s) => {
+        s.age = this.calculateAge(s.birthDate);
+      });
+      this.students = studentList;
       this.loading = false;
     });
 
     this.sharedStudentService.getRefreshStudentList().subscribe(() => {
       this.loading = true;
       this.api.getStudents(token!).subscribe((students) => {
-        this.students = students as Student[];
+        let studentList = students as Student[];
+        studentList.forEach((s) => {
+          s.age = this.calculateAge(s.birthDate);
+        });
+        this.students = studentList;
         this.loading = false;
       });
     });
   }
+
+
+  calculateAge(birthDate: Date){
+    let timeDiff = Math.abs(Date.now() - new Date(birthDate).getTime());
+    let age = Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);
+    return age;
+   }
 
   getDueDateColor(dueDate: Date){
     var dueDate = new Date(dueDate);

@@ -11,8 +11,8 @@ import { of } from 'rxjs';
 })
 export class DatabaseApiService {
 
-  apiRoot = "https://notetakerbackend.azurewebsites.net";
-  //apiRoot = "https://localhost:7089"
+  //apiRoot = "https://notetakerbackend.azurewebsites.net";
+  apiRoot = "https://localhost:7089"
   
   constructor(private http: HttpClient) { }
 
@@ -110,6 +110,12 @@ export class DatabaseApiService {
 
   changePassword(userId: number, token: string, password: string){
     return this.http.post(this.apiRoot + '/User/reset-password/'+ userId + '/' + token + '/' + password, {});
+  }
+
+  uploadExcel(file: File){
+    const formData = new FormData();
+    formData.append('file', file, file.name);
+    return this.http.post(this.apiRoot + '/Student/upload', formData);
   }
 
 }

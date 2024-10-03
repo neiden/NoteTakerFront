@@ -12,12 +12,13 @@ import { MatDialogModule, MatDialog} from '@angular/material/dialog';
 import { NewStudentDialogComponent } from '../new-student-dialog/new-student-dialog.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
+import { UploadExcelComponent } from '../upload-excel/upload-excel.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  imports: [FormsModule, CommonModule, MatMenuModule, MatSelectModule, MatFormFieldModule, MatIconModule, NavbarComponent, StudentListComponent, MatDatepickerModule, MatNativeDateModule, RouterLink, MatDialogModule],
+  imports: [UploadExcelComponent, FormsModule, CommonModule, MatMenuModule, MatSelectModule, MatFormFieldModule, MatIconModule, NavbarComponent, StudentListComponent, MatDatepickerModule, MatNativeDateModule, RouterLink, MatDialogModule],
   standalone: true
 })  
 export class HomeComponent implements OnInit {

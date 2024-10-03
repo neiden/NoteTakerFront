@@ -25,6 +25,8 @@ export class NewStudentDialogComponent {
   school = '';
   age: any;
   dueDate = new Date();
+  eligDate = new Date();
+  birthDate = new Date();
   createFailed: boolean = false;
   constructor(private api: DatabaseApiService,private dialogRef: MatDialogRef<NewStudentDialogComponent>, private loadingService: LoadingindicatorService, private studentService: SharedStudentService){
 
@@ -40,9 +42,11 @@ export class NewStudentDialogComponent {
     var student = {} as Student;
     student.fName = this.fname;
     student.lName = this.lname;
-    student.age = this.age;
     student.dueDate = this.dueDate;
     student.school = this.school;
+    student.eligDate = this.eligDate;
+    student.birthDate = this.birthDate;
+    
     
     this.api.createStudent(student).subscribe(
       {next: (data:any) => {

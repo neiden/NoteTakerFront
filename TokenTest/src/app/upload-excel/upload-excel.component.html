@@ -1,0 +1,13 @@
+<input type="file" class="file-input" [accept]="requiredFileType" (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload">
+    {{fileName || 'No file selected.'}}
+
+    <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+        <mat-icon>attach_file</mat-icon>
+    </button>
+    
+    <button *ngIf="fileName" mat-mini-fab color="primary" class="upload-btn" (click)="uploadFile()">
+        <mat-icon>cloud_upload</mat-icon>
+    </button>
+</div>

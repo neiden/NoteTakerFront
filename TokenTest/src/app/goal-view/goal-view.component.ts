@@ -92,10 +92,10 @@ export class GoalViewComponent implements OnInit {
     {
       data: [],
         label: 'Prompted',
-        fill: true,
+        fill: false,
         tension: 0.2,
-        borderColor: 'black',
-        backgroundColor: 'rgba(0,255,0,0.3)'
+        borderColor: 'green',
+        // backgroundColor: 'rgba(0,255,0,0.3)'
     },
     {
       data: [],

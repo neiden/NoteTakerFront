@@ -13,30 +13,18 @@
     <input type="text" class="input" [(ngModel)]="school" required>
   </div>
   <div class="mat-form">
-    <label for="Age">Age</label>
-    <input type="number" class="input" [(ngModel)]="age" required>
-  </div>
-  <div class="mat-form">
-    <label for="Date">Date</label>
+    <label for="Date">IEP Due Date</label>
     <input type="date" class="input" [(ngModel)]="dueDate" required>
   </div>
-  <!-- <mat-form-field >
-    <input class="input" placeholder="First Name" [(ngModel)]="fname" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input class="input"  matInput placeholder="Last Name" [(ngModel)]="lname" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input class="input"  matInput placeholder="School" [(ngModel)]="school" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input class="input"  matInput placeholder="Age" [(ngModel)]="age" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input class="input" matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="dueDate">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field> -->
+  <div class="mat-form">
+    <label for="Birth Date">Birth Date</label>
+    <input type="date" class="input" [(ngModel)]="birthDate" required>
+  </div>
+  <div class="mat-form">
+    <label for="Eligibility Expiration">Eligibility Expiration</label>
+    <input type="date" class="input" [(ngModel)]="eligDate" required>
+  </div>
+
 </div>
     <div mat-dialog-actions>
       <button mat-button (click)="onCancel()">Cancel</button>
